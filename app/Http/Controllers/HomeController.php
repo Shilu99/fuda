@@ -14,6 +14,7 @@ use App\Models\Admin; // 如果你需要使用 Admin 模型
 use App\Models\User; // 确保引入 User 模型
 use App\Models\Video; // 确保引入 User 模型
 
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -60,6 +61,10 @@ class HomeController extends Controller
 
     public function homepage()
     {
+        //App::setLocale('en');
+        $locale = session('locale'); // 获取 session 中的 locale 值
+        App::setLocale($locale);
+
         
         $data = Video::orderBy('created_at', 'desc')->paginate(8);
         
@@ -81,10 +86,11 @@ class HomeController extends Controller
     }
 
     public function dashboard()
-{
-    $data = Video::paginate(8); // 或者其他逻辑
-    return view('dashboard', compact('data'));
-}
+    {
+        
+        $data = Video::paginate(8); // 或者其他逻辑
+        return view('dashboard', compact('data'));
+    }
 
 } 
    

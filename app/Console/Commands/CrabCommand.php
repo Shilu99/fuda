@@ -81,7 +81,5 @@ class CrabCommand extends Command
     }
         
     }
-    public function shishi(){
-        echo "我是宝贝";
-    }
+    
 }

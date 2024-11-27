@@ -8,7 +8,26 @@
     <!-- 引入 Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <style>
+    .banner{
+            background-color: black;
+            color: yellow;
+            text-align: center;
+            padding: 20px;
+    }
+    .logo{
+            width: 8rem;
+    }
+    footer{
+            background-color: #333;
+            color: #ddd;
+            padding: 20px 0;
+    }
+    .content{
+        margin-top: 30PX
+    }
+</style>
+
 
 </head>
 <body>
@@ -18,19 +37,12 @@
     <div class="container d-flex justify-content-between">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ __('message.locale_label') }}
+                简体中文
             </button>
             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-            <li><a class="dropdown-item" href="{{ route('locale', 'zh') }}">简体中文</a></li>
-            <li><a class="dropdown-item" href="{{ route('locale', 'en') }}">English</a></li>
+                <li><a class="dropdown-item" href="#">简体中文</a></li>
+                <li><a class="dropdown-item" href="#">English</a></li>
             </ul>
-        </div>
-        <div>
-            <!-- <a href="" class="text-light me-3">注册</a>
-            <a href="#" class="text-light">登录</a> -->
-            <a href="{{ route('register') }}" class="text-light me-3">{{ __('message.register') }}</a>
-            <a href="{{ route('login') }}" class="text-light">{{ __('message.login') }}</a>
-
         </div>
     </div>
 </div>
@@ -47,22 +59,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_upload') }}</a>
+                    <a class="nav-link" href="#">上传</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_videos') }}</a>
+                    <a class="nav-link" href="#">视频</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_forum') }}</a>
+                    <a class="nav-link" href="#">论坛</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_beauty') }}</a>
+                    <a class="nav-link" href="#">美女视频</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_movie') }}</a>
+                    <a class="nav-link" href="#">电影中心</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('message.home_vip') }}</a>
+                    <a class="nav-link" href="#">VIP会员</a>
                 </li>
             </ul>
         </div>
@@ -81,8 +93,8 @@
 <div class="container my-3">
     <div class="row">
         <div class="col-md-12 d-flex justify-content-center">
-            <input type="text" class="form-control w-50" placeholder="{{ __('message.search_placeholder') }}">
-            <button class="btn btn-warning ms-2">{{ __('message.search_vod') }}</button>
+            <input type="text" class="form-control w-50" placeholder="搜索视频">
+            <button class="btn btn-warning ms-2">搜索</button>
         </div>
     </div>
 </div>

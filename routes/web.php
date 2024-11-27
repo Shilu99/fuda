@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -25,4 +26,18 @@ Route::get('/show/{id}',  [HomeController::class, 'showVideo'])->name('video.sho
 Route::get('/elephant', function(){ return 'hello, elephant'; })->name('elephant');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+
+
+Route::get('/locale/{locale}', function (string $locale) {
+    if (! in_array($locale, ['en', 'zh'])) {
+        abort(400);
+    }
+ 
+    //App::setLocale($locale);
+
+    session()->put('locale', $locale);
+ 
+    return redirect()->back();
+})->name('locale');
 
